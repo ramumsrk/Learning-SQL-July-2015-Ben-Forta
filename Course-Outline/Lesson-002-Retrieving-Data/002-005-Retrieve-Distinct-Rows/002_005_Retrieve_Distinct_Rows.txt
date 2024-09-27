@@ -1,0 +1,160 @@
+mysql> DESCRIBE TABLE Products
+    -> \p
+--------------
+DESCRIBE TABLE Products
+--------------
+
+    -> \G
+--------------
+DESCRIBE TABLE Products
+--------------
+
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: Products
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 9
+     filtered: 100.00
+        Extra: NULL
+1 row in set, 1 warning (0.01 sec)
+
+Note (Code 1003): /* select#1 */ select `learning_sql`.`Products`.`prod_id` AS `prod_id`,`learning_sql`.`Products`.`vend_id` AS `vend_id`,`learning_sql`.`Products`.`prod_name` AS `prod_name`,`learning_sql`.`Products`.`prod_price` AS `prod_price`,`learning_sql`.`Products`.`prod_desc` AS `prod_desc` from `learning_sql`.`Products`
+mysql> DESC Products
+    -> \p
+--------------
+DESC Products
+--------------
+
+    -> G
+    -> \G
+--------------
+DESC Products
+
+G
+--------------
+
+Empty set (0.00 sec)
+
+mysql> DESC Products
+    -> \p
+--------------
+DESC Products
+--------------
+
+    -> \G
+--------------
+DESC Products
+--------------
+
+*************************** 1. row ***************************
+  Field: prod_id
+   Type: char(10)
+   Null: NO
+    Key: PRI
+Default: NULL
+  Extra: 
+*************************** 2. row ***************************
+  Field: vend_id
+   Type: char(10)
+   Null: NO
+    Key: MUL
+Default: NULL
+  Extra: 
+*************************** 3. row ***************************
+  Field: prod_name
+   Type: char(255)
+   Null: NO
+    Key: 
+Default: NULL
+  Extra: 
+*************************** 4. row ***************************
+  Field: prod_price
+   Type: decimal(8,2)
+   Null: NO
+    Key: 
+Default: NULL
+  Extra: 
+*************************** 5. row ***************************
+  Field: prod_desc
+   Type: text
+   Null: YES
+    Key: 
+Default: NULL
+  Extra: 
+5 rows in set (0.00 sec)
+
+mysql> SELECT
+    -> vend_id
+    -> FROM
+    -> Products
+    -> \p
+--------------
+SELECT
+vend_id
+FROM
+Products
+--------------
+
+    -> \G
+--------------
+SELECT
+vend_id
+FROM
+Products
+--------------
+
+*************************** 1. row ***************************
+vend_id: BRS01
+*************************** 2. row ***************************
+vend_id: BRS01
+*************************** 3. row ***************************
+vend_id: BRS01
+*************************** 4. row ***************************
+vend_id: DLL01
+*************************** 5. row ***************************
+vend_id: DLL01
+*************************** 6. row ***************************
+vend_id: DLL01
+*************************** 7. row ***************************
+vend_id: DLL01
+*************************** 8. row ***************************
+vend_id: FNG01
+*************************** 9. row ***************************
+vend_id: FNG01
+9 rows in set (0.00 sec)
+
+mysql> SELECT
+    -> DISTINCT vend_id
+    -> FROM
+    -> Products
+    -> \p
+--------------
+SELECT
+DISTINCT vend_id
+FROM
+Products
+--------------
+
+    -> \G
+--------------
+SELECT
+DISTINCT vend_id
+FROM
+Products
+--------------
+
+*************************** 1. row ***************************
+vend_id: BRS01
+*************************** 2. row ***************************
+vend_id: DLL01
+*************************** 3. row ***************************
+vend_id: FNG01
+3 rows in set (0.00 sec)
+
+mysql> \t

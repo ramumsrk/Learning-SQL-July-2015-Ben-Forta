@@ -1,0 +1,116 @@
+mysql> DESC Products
+    -> \p
+--------------
+DESC Products
+--------------
+
+    -> \G
+--------------
+DESC Products
+--------------
+
+*************************** 1. row ***************************
+  Field: prod_id
+   Type: char(10)
+   Null: NO
+    Key: PRI
+Default: NULL
+  Extra: 
+*************************** 2. row ***************************
+  Field: vend_id
+   Type: char(10)
+   Null: NO
+    Key: MUL
+Default: NULL
+  Extra: 
+*************************** 3. row ***************************
+  Field: prod_name
+   Type: char(255)
+   Null: NO
+    Key: 
+Default: NULL
+  Extra: 
+*************************** 4. row ***************************
+  Field: prod_price
+   Type: decimal(8,2)
+   Null: NO
+    Key: 
+Default: NULL
+  Extra: 
+*************************** 5. row ***************************
+  Field: prod_desc
+   Type: text
+   Null: YES
+    Key: 
+Default: NULL
+  Extra: 
+5 rows in set (0.00 sec)
+
+mysql> SELECT
+    -> prod_name
+    -> FROM
+    -> Products
+    -> \p
+--------------
+SELECT
+prod_name
+FROM
+Products
+--------------
+
+    -> \G
+--------------
+SELECT
+prod_name
+FROM
+Products
+--------------
+
+*************************** 1. row ***************************
+prod_name: Fish bean bag toy
+*************************** 2. row ***************************
+prod_name: Bird bean bag toy
+*************************** 3. row ***************************
+prod_name: Rabbit bean bag toy
+*************************** 4. row ***************************
+prod_name: 8 inch teddy bear
+*************************** 5. row ***************************
+prod_name: 12 inch teddy bear
+*************************** 6. row ***************************
+prod_name: 18 inch teddy bear
+*************************** 7. row ***************************
+prod_name: Raggedy Ann
+*************************** 8. row ***************************
+prod_name: King doll
+*************************** 9. row ***************************
+prod_name: Queen doll
+9 rows in set (0.00 sec)
+
+mysql> DESCRIBE TABLE Products
+    -> \p
+--------------
+DESCRIBE TABLE Products
+--------------
+
+    -> \G
+--------------
+DESCRIBE TABLE Products
+--------------
+
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: Products
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 9
+     filtered: 100.00
+        Extra: NULL
+1 row in set, 1 warning (0.00 sec)
+
+mysql> 
+mysql> \timing

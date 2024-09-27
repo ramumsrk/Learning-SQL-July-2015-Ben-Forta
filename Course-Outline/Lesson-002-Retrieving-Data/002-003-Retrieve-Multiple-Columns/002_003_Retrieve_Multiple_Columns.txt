@@ -1,0 +1,168 @@
+mysql> SELECT
+    -> prod_id,
+    -> prod_name,
+    -> prod_price
+    -> FROM
+    -> Products
+    -> \p
+--------------
+SELECT
+prod_id,
+prod_name,
+prod_price
+FROM
+Products
+--------------
+
+    -> \G
+--------------
+SELECT
+prod_id,
+prod_name,
+prod_price
+FROM
+Products
+--------------
+
+*************************** 1. row ***************************
+   prod_id: BNBG01
+ prod_name: Fish bean bag toy
+prod_price: 3.49
+*************************** 2. row ***************************
+   prod_id: BNBG02
+ prod_name: Bird bean bag toy
+prod_price: 3.49
+*************************** 3. row ***************************
+   prod_id: BNBG03
+ prod_name: Rabbit bean bag toy
+prod_price: 3.49
+*************************** 4. row ***************************
+   prod_id: BR01
+ prod_name: 8 inch teddy bear
+prod_price: 5.99
+*************************** 5. row ***************************
+   prod_id: BR02
+ prod_name: 12 inch teddy bear
+prod_price: 8.99
+*************************** 6. row ***************************
+   prod_id: BR03
+ prod_name: 18 inch teddy bear
+prod_price: 11.99
+*************************** 7. row ***************************
+   prod_id: RGAN01
+ prod_name: Raggedy Ann
+prod_price: 4.99
+*************************** 8. row ***************************
+   prod_id: RYL01
+ prod_name: King doll
+prod_price: 9.49
+*************************** 9. row ***************************
+   prod_id: RYL02
+ prod_name: Queen doll
+prod_price: 9.49
+9 rows in set (0.00 sec)
+
+mysql> DESC Products
+    -> \p
+--------------
+DESC Products
+--------------
+
+    -> \G
+--------------
+DESC Products
+--------------
+
+*************************** 1. row ***************************
+  Field: prod_id
+   Type: char(10)
+   Null: NO
+    Key: PRI
+Default: NULL
+  Extra: 
+*************************** 2. row ***************************
+  Field: vend_id
+   Type: char(10)
+   Null: NO
+    Key: MUL
+Default: NULL
+  Extra: 
+*************************** 3. row ***************************
+  Field: prod_name
+   Type: char(255)
+   Null: NO
+    Key: 
+Default: NULL
+  Extra: 
+*************************** 4. row ***************************
+  Field: prod_price
+   Type: decimal(8,2)
+   Null: NO
+    Key: 
+Default: NULL
+  Extra: 
+*************************** 5. row ***************************
+  Field: prod_desc
+   Type: text
+   Null: YES
+    Key: 
+Default: NULL
+  Extra: 
+5 rows in set (0.00 sec)
+
+mysql> DESCRIBE TABLE Products
+    -> \p
+--------------
+DESCRIBE TABLE Products
+--------------
+
+    -> \G
+--------------
+DESCRIBE TABLE Products
+--------------
+
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: Products
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 9
+     filtered: 100.00
+        Extra: NULL
+1 row in set, 1 warning (0.01 sec)
+
+mysql> warnings
+Show warnings enabled.
+mysql> DESCRIBE TABLE Products
+    -> \p
+--------------
+DESCRIBE TABLE Products
+--------------
+
+    -> \G
+--------------
+DESCRIBE TABLE Products
+--------------
+
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: Products
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 9
+     filtered: 100.00
+        Extra: NULL
+1 row in set, 1 warning (0.00 sec)
+
+Note (Code 1003): /* select#1 */ select `learning_sql`.`Products`.`prod_id` AS `prod_id`,`learning_sql`.`Products`.`vend_id` AS `vend_id`,`learning_sql`.`Products`.`prod_name` AS `prod_name`,`learning_sql`.`Products`.`prod_price` AS `prod_price`,`learning_sql`.`Products`.`prod_desc` AS `prod_desc` from `learning_sql`.`Products`
+mysql> \t

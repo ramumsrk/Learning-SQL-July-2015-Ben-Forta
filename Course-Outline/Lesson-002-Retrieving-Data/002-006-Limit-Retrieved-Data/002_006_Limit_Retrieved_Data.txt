@@ -1,0 +1,83 @@
+mysql> DESCRIBE TABLE Products
+    -> \p
+--------------
+DESCRIBE TABLE Products
+--------------
+
+    -> \G
+--------------
+DESCRIBE TABLE Products
+--------------
+
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: Products
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 9
+     filtered: 100.00
+        Extra: NULL
+1 row in set, 1 warning (0.00 sec)
+
+Note (Code 1003): /* select#1 */ select `learning_sql`.`Products`.`prod_id` AS `prod_id`,`learning_sql`.`Products`.`vend_id` AS `vend_id`,`learning_sql`.`Products`.`prod_name` AS `prod_name`,`learning_sql`.`Products`.`prod_price` AS `prod_price`,`learning_sql`.`Products`.`prod_desc` AS `prod_desc` from `learning_sql`.`Products`
+mysql> SELECT
+    -> *
+    -> FROM
+    -> Products
+    -> LIMIT 5
+    -> \p
+--------------
+SELECT
+*
+FROM
+Products
+LIMIT 5
+--------------
+
+    -> \G
+--------------
+SELECT
+*
+FROM
+Products
+LIMIT 5
+--------------
+
+*************************** 1. row ***************************
+   prod_id: BNBG01
+   vend_id: DLL01
+ prod_name: Fish bean bag toy
+prod_price: 3.49
+ prod_desc: Fish bean bag toy, complete with bean bag worms with which to feed it
+*************************** 2. row ***************************
+   prod_id: BNBG02
+   vend_id: DLL01
+ prod_name: Bird bean bag toy
+prod_price: 3.49
+ prod_desc: Bird bean bag toy, eggs are not included
+*************************** 3. row ***************************
+   prod_id: BNBG03
+   vend_id: DLL01
+ prod_name: Rabbit bean bag toy
+prod_price: 3.49
+ prod_desc: Rabbit bean bag toy, comes with bean bag carrots
+*************************** 4. row ***************************
+   prod_id: BR01
+   vend_id: BRS01
+ prod_name: 8 inch teddy bear
+prod_price: 5.99
+ prod_desc: 8 inch teddy bear, comes with cap and jacket
+*************************** 5. row ***************************
+   prod_id: BR02
+   vend_id: BRS01
+ prod_name: 12 inch teddy bear
+prod_price: 8.99
+ prod_desc: 12 inch teddy bear, comes with cap and jacket
+5 rows in set (0.00 sec)
+
+mysql> \t
