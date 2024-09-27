@@ -1,0 +1,74 @@
+mysql> SELECT
+    -> prod_id,
+    -> prod_price,
+    -> prod_name
+    -> FROM
+    -> Products
+    -> ORDER BY
+    -> prod_price,
+    -> prod_name
+    -> \p
+--------------
+SELECT
+prod_id,
+prod_price,
+prod_name
+FROM
+Products
+ORDER BY
+prod_price,
+prod_name
+--------------
+
+    -> \G
+--------------
+SELECT
+prod_id,
+prod_price,
+prod_name
+FROM
+Products
+ORDER BY
+prod_price,
+prod_name
+--------------
+
+*************************** 1. row ***************************
+   prod_id: BNBG02
+prod_price: 3.49
+ prod_name: Bird bean bag toy
+*************************** 2. row ***************************
+   prod_id: BNBG01
+prod_price: 3.49
+ prod_name: Fish bean bag toy
+*************************** 3. row ***************************
+   prod_id: BNBG03
+prod_price: 3.49
+ prod_name: Rabbit bean bag toy
+*************************** 4. row ***************************
+   prod_id: RGAN01
+prod_price: 4.99
+ prod_name: Raggedy Ann
+*************************** 5. row ***************************
+   prod_id: BR01
+prod_price: 5.99
+ prod_name: 8 inch teddy bear
+*************************** 6. row ***************************
+   prod_id: BR02
+prod_price: 8.99
+ prod_name: 12 inch teddy bear
+*************************** 7. row ***************************
+   prod_id: RYL01
+prod_price: 9.49
+ prod_name: King doll
+*************************** 8. row ***************************
+   prod_id: RYL02
+prod_price: 9.49
+ prod_name: Queen doll
+*************************** 9. row ***************************
+   prod_id: BR03
+prod_price: 11.99
+ prod_name: 18 inch teddy bear
+9 rows in set (0.00 sec)
+
+mysql> \t

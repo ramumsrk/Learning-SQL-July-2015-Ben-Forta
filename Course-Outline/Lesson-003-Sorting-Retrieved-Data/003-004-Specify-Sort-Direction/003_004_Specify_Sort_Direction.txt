@@ -1,0 +1,84 @@
+mysql> SELECT
+    -> prod_id,
+    -> prod_price,
+    -> prod_name
+    -> FROM
+    -> Products
+    -> ORDER BY prod_price DESC
+    -> \p
+--------------
+SELECT
+prod_id,
+prod_price,
+prod_name
+FROM
+Products
+ORDER BY prod_price DESC
+--------------
+
+    -> ;
+--------------
+SELECT
+prod_id,
+prod_price,
+prod_name
+FROM
+Products
+ORDER BY prod_price DESC
+--------------
+
++---------+------------+---------------------+
+| prod_id | prod_price | prod_name           |
++---------+------------+---------------------+
+| BR03    |      11.99 | 18 inch teddy bear  |
+| RYL01   |       9.49 | King doll           |
+| RYL02   |       9.49 | Queen doll          |
+| BR02    |       8.99 | 12 inch teddy bear  |
+| BR01    |       5.99 | 8 inch teddy bear   |
+| RGAN01  |       4.99 | Raggedy Ann         |
+| BNBG01  |       3.49 | Fish bean bag toy   |
+| BNBG02  |       3.49 | Bird bean bag toy   |
+| BNBG03  |       3.49 | Rabbit bean bag toy |
++---------+------------+---------------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT
+    -> prod_id,
+    -> prod_price,
+    -> prod_name
+    -> FROM
+    -> Products
+    -> ORDER BY prod_price DESC
+    -> LIMIT 1
+    -> \p
+--------------
+SELECT
+prod_id,
+prod_price,
+prod_name
+FROM
+Products
+ORDER BY prod_price DESC
+LIMIT 1
+--------------
+
+    -> \g
+--------------
+SELECT
+prod_id,
+prod_price,
+prod_name
+FROM
+Products
+ORDER BY prod_price DESC
+LIMIT 1
+--------------
+
++---------+------------+--------------------+
+| prod_id | prod_price | prod_name          |
++---------+------------+--------------------+
+| BR03    |      11.99 | 18 inch teddy bear |
++---------+------------+--------------------+
+1 row in set (0.00 sec)
+
+mysql> \t

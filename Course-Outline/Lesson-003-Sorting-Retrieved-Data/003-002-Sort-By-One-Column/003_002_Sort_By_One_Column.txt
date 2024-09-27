@@ -1,0 +1,157 @@
+mysql> DESC Products
+    -> \p
+--------------
+DESC Products
+--------------
+
+    -> \G
+--------------
+DESC Products
+--------------
+
+*************************** 1. row ***************************
+  Field: prod_id
+   Type: char(10)
+   Null: NO
+    Key: PRI
+Default: NULL
+  Extra: 
+*************************** 2. row ***************************
+  Field: vend_id
+   Type: char(10)
+   Null: NO
+    Key: MUL
+Default: NULL
+  Extra: 
+*************************** 3. row ***************************
+  Field: prod_name
+   Type: char(255)
+   Null: NO
+    Key: 
+Default: NULL
+  Extra: 
+*************************** 4. row ***************************
+  Field: prod_price
+   Type: decimal(8,2)
+   Null: NO
+    Key: 
+Default: NULL
+  Extra: 
+*************************** 5. row ***************************
+  Field: prod_desc
+   Type: text
+   Null: YES
+    Key: 
+Default: NULL
+  Extra: 
+5 rows in set (0.00 sec)
+
+mysql> DESCRIBE TABLE Products
+    -> \p
+--------------
+DESCRIBE TABLE Products
+--------------
+
+    -> \G
+--------------
+DESCRIBE TABLE Products
+--------------
+
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: Products
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 9
+     filtered: 100.00
+        Extra: NULL
+1 row in set, 1 warning (0.00 sec)
+
+Note (Code 1003): /* select#1 */ select `learning_sql`.`Products`.`prod_id` AS `prod_id`,`learning_sql`.`Products`.`vend_id` AS `vend_id`,`learning_sql`.`Products`.`prod_name` AS `prod_name`,`learning_sql`.`Products`.`prod_price` AS `prod_price`,`learning_sql`.`Products`.`prod_desc` AS `prod_desc` from `learning_sql`.`Products`
+mysql> SELECT
+    -> prod_name
+    -> FROM
+    -> Products
+    -> ORDER BY prod_name
+    -> \p
+--------------
+SELECT
+prod_name
+FROM
+Products
+ORDER BY prod_name
+--------------
+
+    -> \G
+--------------
+SELECT
+prod_name
+FROM
+Products
+ORDER BY prod_name
+--------------
+
+*************************** 1. row ***************************
+prod_name: 12 inch teddy bear
+*************************** 2. row ***************************
+prod_name: 18 inch teddy bear
+*************************** 3. row ***************************
+prod_name: 8 inch teddy bear
+*************************** 4. row ***************************
+prod_name: Bird bean bag toy
+*************************** 5. row ***************************
+prod_name: Fish bean bag toy
+*************************** 6. row ***************************
+prod_name: King doll
+*************************** 7. row ***************************
+prod_name: Queen doll
+*************************** 8. row ***************************
+prod_name: Rabbit bean bag toy
+*************************** 9. row ***************************
+prod_name: Raggedy Ann
+9 rows in set (0.00 sec)
+
+mysql> SELECT
+    -> prod_name
+    -> FROM
+    -> Products
+    -> ORDER BY prod_id
+    -> \p
+--------------
+SELECT
+prod_name
+FROM
+Products
+ORDER BY prod_id
+--------------
+
+    -> ;
+--------------
+SELECT
+prod_name
+FROM
+Products
+ORDER BY prod_id
+--------------
+
++---------------------+
+| prod_name           |
++---------------------+
+| Fish bean bag toy   |
+| Bird bean bag toy   |
+| Rabbit bean bag toy |
+| 8 inch teddy bear   |
+| 12 inch teddy bear  |
+| 18 inch teddy bear  |
+| Raggedy Ann         |
+| King doll           |
+| Queen doll          |
++---------------------+
+9 rows in set (0.00 sec)
+
+mysql> \t
